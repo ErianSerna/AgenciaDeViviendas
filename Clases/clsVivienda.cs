@@ -22,7 +22,7 @@ namespace AgenciaViviendasParcial.Clases
 
                 string direccion = Vivienda.DireccionCasa;
 
-                return "La vivienda con dirección" + direccion + " ha sido registrado con éxito";
+                return "La vivienda con dirección " + direccion + " ha sido registrado con éxito";
 
             }
             catch (Exception e)
@@ -41,7 +41,7 @@ namespace AgenciaViviendasParcial.Clases
             }
             dbAgencia.Viviendas.AddOrUpdate(Vivienda);
             dbAgencia.SaveChanges();
-            return "Se actualizó el Vivienda correctamente";
+            return "Se actualizó la Vivienda correctamente";
         }
 
         public Vivienda Consultar(string Dirrecion)
@@ -65,7 +65,7 @@ namespace AgenciaViviendasParcial.Clases
         public List<Vivienda> ConsultarTodos()
         {
             return dbAgencia.Viviendas
-                .OrderByDescending(e => e.NumeroDePisos) //Ordena los Viviendas por numero de pisos
+                .OrderBy(e => e.Id_Vivienda) //Ordena los Viviendas por numero de pisos
                 .ToList();
         }
         public string Eliminar()
