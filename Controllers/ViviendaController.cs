@@ -47,6 +47,7 @@ namespace AgenciaViviendassParcial.Controllers
 
             return viv.Insertar();
         }
+
         [HttpPut]
         [Route("Actualizar")]
         public string Actualizar([FromBody] Vivienda Vivienda)
@@ -57,6 +58,7 @@ namespace AgenciaViviendassParcial.Controllers
 
             return viv.Actualizar();
         }
+
         [HttpDelete]
         [Route("Eliminar")]
         public string Eliminar([FromBody] Vivienda Vivienda)
@@ -65,14 +67,5 @@ namespace AgenciaViviendassParcial.Controllers
             viv.Vivienda = Vivienda;
             return viv.Eliminar();
         }
-
-        [HttpDelete]
-        [Route("EliminarXDireccion")]
-        public string EliminarXNumeroCuartos(string Nombre)
-        {
-            clsViviendas Vivienda = new clsViviendas();
-            return Vivienda.EliminarXDireccion(Nombre);
-        }
-
     }
 }
